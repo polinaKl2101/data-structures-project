@@ -13,5 +13,25 @@ class TestNode(unittest.TestCase):
         self.assertEqual(self.n2.next_node, self.n2.next_node)
 
 
+class TestStack(unittest.TestCase):
+
+    exmp = Node(7, None)
+
+    def test_init(self):
+        self.assertEqual((Node(5, None)).data, int(5))
+
+    def test_push(self):
+        stack = Stack()
+        stack.push('data1')
+        self.assertEqual((stack.top.data), 'data1')
+
+    def test_pop(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        data = stack.pop()
+        self.assertEqual((stack.top.data), 'data1')
+
+
 if __name__ == '__main__':
     unittest.main()

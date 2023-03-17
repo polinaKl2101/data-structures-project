@@ -25,9 +25,11 @@ class Stack(object):
 
         :param data: данные, которые будут добавлены на вершину стека
         """
-        new_node = Node(data, next_node=None)
+
+        new_node = Node(data)
         if self.top:
             new_node.next_node = self.top
+
         self.top = new_node
         self.size += 1
 
@@ -39,11 +41,11 @@ class Stack(object):
         """
         if self.top is None:
             return None
+
         result = self.top.data
         self.top = self.top.next_node
         self.size -= 1
         return result
-
 
 
 
