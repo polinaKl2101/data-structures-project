@@ -38,4 +38,11 @@ class Queue:
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        return f"{self.items}"
+        result = []
+        if self.head is None:
+            return ""
+        index = self.head
+        while index:
+            result.append(index.data)
+            index = index.next_node
+        return '\n'.join(result)

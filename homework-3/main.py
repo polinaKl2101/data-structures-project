@@ -4,7 +4,7 @@ if __name__ == '__main__':
     queue = Queue()
 
     # Магический метод __str__ возвращает пустую строку
-    #assert str(Queue()) == ""
+    assert str(Queue()) == ""
 
 
 
@@ -22,5 +22,5 @@ if __name__ == '__main__':
     #print(queue.tail.next_node.data)  # AttributeError: 'NoneType' object has no attribute 'data'
 
     # Проверяем магический метод __str__
-    #assert str(queue) == "data1\ndata2\ndata3"
+    assert str(queue) == "data1\ndata2\ndata3"
 
