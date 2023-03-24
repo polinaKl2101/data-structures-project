@@ -34,7 +34,15 @@ class Queue:
             self.tail = self.tail.next_node
 
     def dequeue(self):
-        pass
+        if self.head is None:
+            return None
+        queue = self.head.data
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next_node
+        return queue
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
