@@ -34,3 +34,17 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(example_three.head.data, {'id': 1})
         self.assertEqual(example_three.end.data, {'id': 3})
 
+    def test_to_list(self):
+        example_list = LinkedList()
+        example_list.insert_beginning({'id': 1, 'username': 'test1'})
+        example_list.insert_at_end({'id': 2, 'username': 'test2'})
+        example_data = example_list.to_list()
+        self.assertEqual(example_data, [{'id': 1, 'username': 'test1'}, {'id': 2, 'username': 'test2'}])
+
+    def test_get_data_by_id(self):
+        example_list = LinkedList()
+        example_list.insert_beginning({'id': 1, 'username': 'test1'})
+        example_list.insert_at_end({'id': 2, 'username': 'test2'})
+        example_data = example_list.to_list()
+        find_data = example_list.get_data_by_id(1)
+        self.assertEqual(find_data, {'id': 1, 'username': 'test1'})
